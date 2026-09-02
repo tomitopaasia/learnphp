@@ -1,7 +1,21 @@
 <?php
-echo "Hello, World!"; //Hello world command
-$name = "John Doe"; //$ name variable
-$age = 30; //$ age variable
-echo $age * 2 *3 *4 *5;
-echo 2 + 4 * 5;
+$test = 10;
+$test = 3.1;
+$test = "Hello World";
+$test = "õpilane";
+$test = "🥀";
+$test = true;
+$test = false;
+$test = null;
+$lol;
+var_dump($test);
+var_dump($lol);
+$test = [1, 2, "three", true];
+var_dump($test);
+$test = new stdClass();
+$test->name = "John";
+var_dump($test);
+$num1 = 1000000000; // integer
+$num2 = 1000000000; // integer
+var_dump($num1 == $num2);
 ?>
