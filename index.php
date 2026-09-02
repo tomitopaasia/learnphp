@@ -1,4 +1,7 @@
 <?php
-echo "Hello, World!";
-echo "This is a simple PHP script.";
+echo "Hello, World!"; //Hello world command
+$name = "John Doe"; //$ name variable
+$age = 30; //$ age variable
+echo $age * 2 *3 *4 *5;
+echo 2 + 4 * 5;
 ?>
