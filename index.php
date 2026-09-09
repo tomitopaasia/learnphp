@@ -36,3 +36,16 @@ $box2->length = 50;
 var_dump($box2);
 var_dump($box2->volume());
 var_dump($box1);
+
+
+class box {
+}
+
+public function volume() {
+    return $this->height * $this->length * $this->width;
+}
+
+$num1 = 1;
+$num2 = $num1;
+$num1 = 2;
+var_dump($num1, $num2);
