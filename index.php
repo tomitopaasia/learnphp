@@ -1,29 +1,38 @@
 <?php
-$test = [1, 2, 'word', true];
-var_dump($test[2]);
-$test[2] = 'another word';
-var_dump($test);
-$test[4] = 'new value';
-var_dump($test);
-$test[] = 'last value';
-var_dump($test);
-array_push($test, 'pushed value');
-var_dump($test);
-$test = [ 
-            'name' => 'Tomi', 
-            'age' => 20,
-            1,
-            3,
-            'word',
-            100 => 'new value',
-            5,  
-        ];
-var_dump($test['name']);
-var_dump($test);
-$test = [
+class Box {
+    public $width;
+    public $height;
+    public $length;
+    public $isOpen = false;
+    public $hasBeenOpened = false;
 
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-var_dump($test[1][2]);
+    public function open() {
+        $this->isOpen = true;
+        $this->hasBeenOpened = true;
+    }
+
+    public function close() {
+        $this->isOpen = false;
+    }
+
+    public function volume() {
+        return $this->height * $this->length * $this->width;
+    }
+}
+
+
+$box1 = new Box();
+$box1->width = 10;
+$box1->height = 20;
+$box1->length = 30;
+$box1->open();
+var_dump($box1);
+var_dump($box1->volume());
+
+$box2 = new Box();
+$box2->width = 30;
+$box2->height = 40;
+$box2->length = 50;
+var_dump($box2);
+var_dump($box2->volume());
+var_dump($box1);
