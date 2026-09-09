@@ -2,10 +2,10 @@
 
 class Box {
     public $width;
-    public $height;
-    public $length;
-    public $isOpen = false;
-    public $hasBeenOpened = false;
+    private $height;
+    protected $length;
+    public bool $isOpen = false;
+    public bool $hasBeenOpened = false;
 
     public function open() {
         $this->isOpen = true;
@@ -19,16 +19,33 @@ class Box {
     public function volume() {
         return $this->height * $this->length * $this->width;
     }
+
+    public function test() {
+        var_dump($this->length);
+    }
+
+    public function setHeight(int $height) {
+        if($height > 0) {
+            $this->height = $height;
+        }
+    }
+
+    public function getHeight() {
+        return $this->height;
+    }
 }
 
+class MetalBox extends Box {
+    public $weight;
 
-$num1 = 1;
-$num2 = &$num1;
-$num1 = 2;
-var_dump($num1, $num2); 
+    public function mass(){
+        return $this->volume() * $this->weight;
+    }
+    public function test2() {
+        var_dump($this->height);
+    }
+}
 
-$box1 = new Box();
-$box1->width = 1;
-$box2 = clone $box1;
-$box1->width = 2;
-var_dump($box1, $box2);
+$metal1 = new MetalBox();
+$metal1->test2();
+var_dump($metal1);
