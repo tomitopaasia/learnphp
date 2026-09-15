@@ -1,28 +1,9 @@
 <?php
+$sum = 0;
 
-class Box {
-    public static $count = 0;
-    public function __construct(private $w, private $h, private $l) {
-        self::$count++;
-    }
-
-    public function volume(){
-        return $this->w * $this->h * $this->l;
-    }
-
-    public static function me() {
-        var_dump(self::class);
-        var_dump(static::class);
-        
-    }
+for($i=1;$i<1000;$i++) {
+   if($i%3 === 0 || $i%5 === 0) {
+        $sum+=$i;
+   } 
 }
-
-class MetalBox extends Box {
-
-}
-
-Box::$count = 1;
-Box::$count = 2;
-Box::me();
-MetalBox::me();
-var_dump(Box::$count, Box::$count);
+var_dump($sum);
