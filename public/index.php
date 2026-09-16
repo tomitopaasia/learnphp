@@ -79,6 +79,10 @@ Router::addRoute('/us', function () {
         include __DIR__ . '/../views/us.php';
 });
 
+    Router::addRoute('/technology', function () {
+        include __DIR__ . '/../views/technology.php';
+    });
+
 $router = new Router($_SERVER['REQUEST_URI']);
 $match = $router->match();
 if($match) {
